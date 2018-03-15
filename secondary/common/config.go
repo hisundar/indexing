@@ -1708,8 +1708,15 @@ var SystemConfig = Config{
 	},
 	"indexer.settings.moi.persistence_threads": ConfigValue{
 		runtime.NumCPU() * 2,
-		"Number of concurrent threads scanning index for persistence",
+		"Number of concurrent threads scanning a single index for persistence",
 		runtime.NumCPU() * 2,
+		false, // mutable
+		false, // case-insensitive
+	},
+	"indexer.settings.moi.global_persistence_threads": ConfigValue{
+		runtime.NumCPU(),
+		"Number of threads in the shared pool for index persistence",
+		runtime.NumCPU(),
 		false, // mutable
 		false, // case-insensitive
 	},

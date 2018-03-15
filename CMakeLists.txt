@@ -16,7 +16,7 @@ ENDIF (BUILD_ENTERPRISE)
 SET (LDFLAGS)
 IF (APPLE)
   # On macOS, we must use -rpath to locate libraries
-  # TODO: Remove debug info stripping (-s) added to allow 1.7.6 to work on macOS
+  # TODO: Remove debug info stripping (-s) added to allow 1.9.3 to work on macOS
   SET (LDFLAGS "-s -extldflags '-Wl,-rpath,@executable_path/../lib'")
 ENDIF ()
 
@@ -46,7 +46,7 @@ GoInstall (TARGET indexer PACKAGE github.com/couchbase/indexing/secondary/cmd/in
   GOTAGS "${TAGS}"
   LDFLAGS "${LDFLAGS}"
   INSTALL_PATH bin OUTPUT indexer
-  GOVERSION 1.7.6)
+  GOVERSION 1.9.3)
 
 ADD_DEPENDENCIES(indexer sigar forestdb platform)
 
@@ -57,21 +57,21 @@ GoInstall (TARGET projector PACKAGE github.com/couchbase/indexing/secondary/cmd/
   GOTAGS "${TAGS}"
   LDFLAGS "${LDFLAGS}"
   INSTALL_PATH bin
-  GOVERSION 1.7.6)
+  GOVERSION 1.9.3)
 
 GoInstall (TARGET cbindex PACKAGE github.com/couchbase/indexing/secondary/cmd/cbindex
   GOPATH "${PROJECT_SOURCE_DIR}/../../../.." "${GODEPSDIR}"
   GOTAGS "${TAGS}"
   LDFLAGS "${LDFLAGS}"
   INSTALL_PATH bin
-  GOVERSION 1.7.6)
+  GOVERSION 1.9.3)
 
 GoInstall (TARGET cbindexperf PACKAGE github.com/couchbase/indexing/secondary/cmd/cbindexperf
   GOPATH "${PROJECT_SOURCE_DIR}/../../../.." "${GODEPSDIR}"
   GOTAGS "${TAGS}"
   LDFLAGS "${LDFLAGS}"
   INSTALL_PATH bin
-  GOVERSION 1.7.6)
+  GOVERSION 1.9.3)
 
 GoInstall (TARGET cbindexplan PACKAGE github.com/couchbase/indexing/secondary/cmd/cbindexplan
   GOPATH "${PROJECT_SOURCE_DIR}/../../../.." "${GODEPSDIR}"
@@ -81,5 +81,5 @@ GoInstall (TARGET cbindexplan PACKAGE github.com/couchbase/indexing/secondary/cm
   GOTAGS "${TAGS}"
   LDFLAGS "${LDFLAGS}"
   INSTALL_PATH bin OUTPUT cbindexplan
-  GOVERSION 1.7.6)
+  GOVERSION 1.9.3)
 
