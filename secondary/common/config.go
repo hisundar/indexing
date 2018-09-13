@@ -1016,6 +1016,13 @@ var SystemConfig = Config{
 		false, // mutable
 		false, // case-insensitive
 	},
+	"indexer.plasma.minFgEvictResidentRatio": ConfigValue{
+		float64(0.20),
+		"Minimum Resident Ratio needed to throttle writes on mem pressure",
+		float64(0.20),
+		false,
+		false,
+	},
 	"indexer.plasma.LSSSegmentFileSize": ConfigValue{
 		plasmaLogSegSize(),
 		"LSS log segment maxsize per file",
